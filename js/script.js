@@ -58,8 +58,10 @@ function getSlideNext(){
     randomNum++;
     setBg();
     }
-    return randomNum
     }
+
+const slideNext = document.querySelector('.slide-next');
+slideNext.addEventListener('click', getSlideNext);
 
 function getSlidePrev(){
     if (randomNum == '01'){
@@ -69,11 +71,7 @@ function getSlidePrev(){
     randomNum--;
     setBg();
     }
-    return randomNum
 }
-
-const slideNext = document.querySelector('.slide-next');
-slideNext.addEventListener('click', getSlideNext);
 
 const slidePrev = document.querySelector('.slide-prev');
 slidePrev.addEventListener('click', getSlidePrev);
