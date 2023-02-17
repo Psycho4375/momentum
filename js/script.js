@@ -1,6 +1,8 @@
 const time = document.querySelector(".time");
 const dateTag = document.querySelector(".date");
 const greetings = document.querySelector(".greeting");
+let hoursGreeting = "not work";
+let randomNum = (Math.round(Math.random() * (20 - 1)) + 1).toString();;
 
 function showTime(){
     const date = new Date();
@@ -18,7 +20,7 @@ function showTime(){
         function getTimeOfDay(){
             const date = new Date();
             const hours = date.getHours();
-            let hoursGreeting = "not work";
+            
             switch (true){
                 case (hours > 17) : {hoursGreeting = 'evening';break;}
                 case (hours > 11) : {hoursGreeting = 'afternoon';break;}
@@ -27,6 +29,7 @@ function showTime(){
             }
             return hoursGreeting;
         }
+        
         const timeOfDay = getTimeOfDay();
         const greeting = `Good ${timeOfDay}`;
         greetings.textContent = greeting;
@@ -36,4 +39,43 @@ function showTime(){
     setTimeout(showTime, 1000); 
 }
 showTime();
+
+function setBg(){
+    if (randomNum < 10){randomNum = "0" + randomNum;}
+    const img = new Image();
+    img.src = "./assets/img/" + hoursGreeting + "/" + randomNum + ".jpg)";
+    img.onload = () => {
+    document.body.style.backgroundImage = "url(https://raw.githubusercontent.com/Psycho4375/momentum/main/assets/img/" + hoursGreeting + "/" + randomNum + ".jpg)"; 
+    };
+}
+setBg();
+
+function getSlideNext(){
+    if (randomNum == '20'){
+        randomNum = 1;
+        setBg();
+    } else {
+    randomNum++;
+    setBg();
+    }
+    return randomNum
+    }
+
+function getSlidePrev(){
+    if (randomNum == '01'){
+        randomNum = 20;
+        setBg();
+    } else {
+    randomNum--;
+    setBg();
+    }
+    return randomNum
+}
+
+const slideNext = document.querySelector('.slide-next');
+slideNext.addEventListener('click', getSlideNext);
+
+const slidePrev = document.querySelector('.slide-prev');
+slidePrev.addEventListener('click', getSlidePrev);
+
 
