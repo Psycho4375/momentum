@@ -45,7 +45,7 @@ function setBg(){
     const img = new Image();
     img.src = `https://raw.githubusercontent.com/Psycho4375/momentum/main/assets/img/${hoursGreeting}/${randomNum}.webp`;
     img.onload = () => {
-    document.body.style.backgroundImage = `url(https://raw.githubusercontent.com/Psycho4375/momentum/main/assets/img/${hoursGreeting}/${randomNum}.webp)`; 
+    document.body.style.backgroundImage = `url(${img.src})`; 
     };
 }
 setBg();
