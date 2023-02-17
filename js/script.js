@@ -43,9 +43,9 @@ showTime();
 function setBg(){
     if (randomNum < 10){randomNum = "0" + randomNum;}
     const img = new Image();
-    img.src = "./assets/img/" + hoursGreeting + "/" + randomNum + ".webp";
+    img.src = `https://raw.githubusercontent.com/Psycho4375/momentum/main/assets/img/${hoursGreeting}/${randomNum}.webp`;
     img.onload = () => {
-    document.body.style.backgroundImage = "url(https://raw.githubusercontent.com/Psycho4375/momentum/main/assets/img/" + hoursGreeting + "/" + randomNum + ".webp)"; 
+    document.body.style.backgroundImage = `url(https://raw.githubusercontent.com/Psycho4375/momentum/main/assets/img/${hoursGreeting}/${randomNum}.webp)`; 
     };
 }
 setBg();
