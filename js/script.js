@@ -77,5 +77,3 @@ slideNext.addEventListener('click', getSlideNext);
 
 const slidePrev = document.querySelector('.slide-prev');
 slidePrev.addEventListener('click', getSlidePrev);
-
-
