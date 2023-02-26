@@ -41,8 +41,17 @@ body {
 
 .play-list {
   text-align: left;
+  margin: 5px 0;
+  padding: 5px;
 }
-
+.play-list > li::marker {
+  content: "✓";  
+  list-style-type: none;
+}
+.play-listActive::marker{
+  color: rgb(197, 179, 88);
+  transition: all 0.4s;
+}
 .play-item {
   position: relative;
   padding: 5px;
@@ -58,7 +67,7 @@ body {
 }
 
 .play-item::before {
-  content: "\2713";  
+  content: "✓";  
   position: absolute;
   left: 0;
   top: 2px;
@@ -108,6 +117,9 @@ body {
 
 .pause {
   background-image: url("../assets/svg/pause.svg");
+  width: 40px;
+  height: 40px;
+  background-size: 40px 40px;
 }
 
 .play-prev {
