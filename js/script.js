@@ -277,5 +277,3 @@ function playNextFun(){
         liCollection[playNum].classList.add('play-listActive');
     }
 }
-
-
